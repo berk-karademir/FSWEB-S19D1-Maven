@@ -19,8 +19,6 @@ public class Fruit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     @Min(value = 1, message = "Id can not be lower than 1 !")
-    @jakarta.validation.constraints.NotNull(message = "Fruit id can not be null")
-    @NotBlank
     private Long id;
 
     @Column(name = "name")
@@ -31,14 +29,10 @@ public class Fruit {
 
 
     @Column(name = "price")
-    @jakarta.validation.constraints.NotNull
-    @NotBlank
     @DecimalMin("9.90")
     private Double price;
 
     @Column(name = "fruit_type")
-    @NotNull
-    @NotBlank
     @Enumerated(EnumType.STRING)
     private FruitType fruitType;
 }
